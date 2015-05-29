@@ -1,0 +1,27 @@
+/*
+ * Color Definition Sheet
+ */
+
+.nd2-bg-500 { background-color: #009688; color: #ffffff; }
+
+/*
+ * Custom Styles
+ * 
+ */
+
+.ui-page-theme-a .ui-header {
+	background-color: #26a69a;
+	color: #ffffff;
+}
+
+.ui-page-theme-a .ui-footer {
+	background-color: #ffffff;
+	color: #323232;
+	
+	box-shadow: 0px 0px 7px rgba(0,0,0,0.1);
+}
+
+li.ui-tabs-active > .ui-link.ui-btn.ui-tabs-anchor {
+	color: #26a96a;
+}
+

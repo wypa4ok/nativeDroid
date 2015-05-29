@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>nativeDroid II - jQueryMobile Template</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+		<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" />
+		<link rel="stylesheet" href="/vendor/waves/waves.min.css" />
+		<link rel="stylesheet" href="/vendor/wow/animate.css" />
+		<link rel="stylesheet" href="/css/nativedroid2.css" />
+
+	</head>
+	<body class="nd2-accent-lime">
+
+		<div data-role="page">
+
+			<nd2-include data-src="/examples/fragments/panel.left.html"></nd2-include>
+
+
+			<div data-role="header" data-position="fixed" class="wow fadeIn">
+				<a href="#leftpanel" class="ui-btn ui-btn-left wow fadeIn" data-wow-delay='0.8s'><i class="md md-menu"></i></a>
+				<h1 class="wow fadeIn" data-wow-delay='0.4s'>Tabs</h1>
+			</div>
+
+			<div role="main" class="ui-content wow fadeIn" data-inset="false" data-wow-delay="0.2s">
+				
+				<div data-role="tabs" id="tabs">
+					<div data-role="navbar">
+						<ul>
+							<li>
+								<a href="#one"  class="ui-btn-active" data-ajax="false">First Tab</a>
+							</li>
+							<li>
+								<a href="#two" data-ajax="false">Second Tab</a>
+							</li>
+							<li>
+								<a href="#three" data-ajax="false">Third</a>
+							</li>
+						</ul>
+					</div>
+
+					<div id="one">
+						<h2>Tab One</h2>
+						<p>First tab-content.</p>
+					</div>
+
+					<div id="two">
+						<h2>Tab Two</h2>
+						<p>Second tab-content.</p>
+					</div>
+
+					<div id="three">
+						<h2>Tab Three</h2>
+						<p>third tab-content.</p>
+					</div>
+
+				</div>
+			</div>
+			
+		</div>
+
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+		<script src="//ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+		<script src="/vendor/waves/waves.min.js"></script>
+		<script src="/vendor/wow/wow.min.js"></script>
+		<script src="/js/nativedroid2.js"></script>
+
+	</body>
+</html>
