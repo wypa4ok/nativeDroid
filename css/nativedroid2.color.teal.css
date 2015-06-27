@@ -21,7 +21,63 @@
 	box-shadow: 0px 0px 7px rgba(0,0,0,0.1);
 }
 
-li.ui-tabs-active > .ui-link.ui-btn.ui-tabs-anchor {
-	color: #26a96a;
+li.ui-tabs-active > .ui-link.ui-btn.ui-tabs-anchor,
+.ui-page-theme-a .ui-btn.clr-primary {
+	color: #26a69a;
 }
+
+.ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a,
+.ui-page-theme-a a:hover, html .ui-bar-a a:hover, html .ui-body-a a:hover, html body .ui-group-theme-a a:hover,
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited  {
+	color: #26a69a;
+}
+
+.ui-page-theme-a .ui-btn.clr-warning {
+	color: rgb(244,67,54);
+}
+
+.ui-page-theme-a .ui-btn.ui-btn-raised.clr-primary {
+	background-color: #26a69a;
+	color: rgba(255,255,255,0.85);
+}
+
+.ui-page-theme-a .ui-btn.ui-btn-raised.clr-warning {
+	background-color: rgb(244,67,54);
+	color: rgba(255,255,255,0.85);
+}
+
+.ui-icon-check:after, html .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+	border-color: #26a69a;
+}
+
+.ui-btn.ui-radio-on:after {
+	border: 2px solid #26a69a;
+}
+
+.ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-checkbox-on,
+.ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-radio-on {
+	background-color: #26a69a;
+	color: #ffffff;
+}
+
+.ui-input-text.ui-focus:after,
+.ui-input-search.ui-focus:after {
+	background-color: #26a69a;
+	height: 2px;
+}
+
+textarea.ui-input-text.ui-textinput-autogrow.ui-focus {
+	border-bottom: 2px solid #26a69a;
+}
+
+.ui-page-theme-a .ui-flipswitch-active, html .ui-bar-a .ui-flipswitch-active, html .ui-body-a .ui-flipswitch-active, html body .ui-group-theme-a .ui-flipswitch-active, html body .ui-flipswitch.ui-bar-a.ui-flipswitch-active {
+  color: #ffffff !important;
+  background-color: #26a69a !important;
+}
+
+.ui-page-theme-a .ui-slider-track .ui-btn-active, html .ui-bar-a .ui-slider-track .ui-btn-active, html .ui-body-a .ui-slider-track .ui-btn-active, html body .ui-group-theme-a .ui-slider-track .ui-btn-active, html body div.ui-slider-track.ui-body-a .ui-btn-active,
+.ui-slider-track .ui-btn.ui-slider-handle {
+	background-color: #26a69a !important;
+}
+
 
