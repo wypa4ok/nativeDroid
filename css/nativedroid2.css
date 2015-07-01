@@ -635,6 +635,25 @@ hr.inset {
 }
 
 /*
+ * Banner / Advertising
+ */
+
+.nd2-banner {
+	display: block;
+	margin: 14px 0px;
+}
+
+.nd2-sample-ad {
+	display: block;
+	margin: 14px 0px;
+	padding: 7px;
+	font-size: 12px;
+	font-style: italic;
+	border-radius: 3px;
+	text-align: center;
+}
+
+/*
  * Button
  * 
  */

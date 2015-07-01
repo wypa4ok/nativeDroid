@@ -1,3 +1,24 @@
+// ND2 Project Settings
+
+
+var nd2Project = {
+	stats : {
+		analyticsUA: null // Your UA-Code for Example: 'UA-123456-78'
+	},
+	advertising : {
+		active : false, // true | false
+		path : "/examples/fragments/adsense/",
+		extension : ".html"
+	}
+};
+
+
+//
+// ...the magic starts here...
+//
+/////////////////////////////////
+
+
 // ND2 Widgets
 (function($){
 	
@@ -71,6 +92,43 @@
 		return $("nd2-include", e.target).include();
 	});
 
+
+	// nd2-ad
+	$.widget("nd2.ad",{
+		options: {
+			banner : null,
+			path : nd2Project.advertising.path,
+			activated : nd2Project.advertising.active,
+			extension : nd2Project.advertising.extension,
+			post : {}
+		},
+		_create: function() {
+			var el = this.element;
+			var opts = $.extend(this.options, el.data("options"));
+			$(document).trigger("createinclude");
+			
+			if(opts.activated && opts.banner !== null) {
+				var src = opts.path+opts.banner+opts.extension;
+				el.addClass("nd2-banner");
+				el.load(src,opts.post,function() {
+					el.enhanceWithin();
+				});
+			}
+		},
+		_update: function() {
+//			console.log("update?");
+		},
+		refresh: function() {
+			return this._update();
+		}
+	});
+
+	$(document).bind("pagecreate", function(e) {
+		$(document).trigger("includebeforecreate");
+		return $("nd2-ad", e.target).ad();
+	});
+
+
 })(jQuery);
 
 
@@ -79,6 +137,7 @@
 
 $(function() {
 
+	// Open navigation by Swipe
 	$(".ui-page:not('.nd2-no-menu-swipe')").on("swiperight swipeleft",function(e) {
 		if($(".ui-page-active").jqmData("panel") !== "open") {
 			if(e.type === "swiperight") {
@@ -105,4 +164,48 @@ $(function() {
 		$("body").removeClass("nd2-ready");
 	});
 	
+	// Google Analytics Helper
+	
+	function getUrlParts(url) {
+	    var a = document.createElement('a');
+	    a.href = url;
+	
+	    return {
+	        href: a.href,
+	        host: a.host,
+	        hostname: a.hostname,
+	        port: a.port,
+	        pathname: a.pathname,
+	        protocol: a.protocol,
+	        hash: a.hash,
+	        search: a.search
+	    };
+	}
+	
+	var _ga = {
+		send : function(url) {
+		  (!url) ? ga('send', 'pageview') : ga('send', 'pageview', url);
+		}
+	};
+	
+	if(nd2Project.stats.analyticsUA) {
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	
+	  ga('create', nd2Project.stats.analyticsUA, 'auto');
+		_ga.send(null);
+		
+		// Trigger Page Change
+		
+		$("body").on("pagechange",function(evt,data) {
+			_ga.send(getUrlParts(data.options.absUrl).pathname);
+		});
+		
+	}
+	
 });
+
+// Magic ends.
+///////////////
