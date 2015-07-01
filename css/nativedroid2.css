@@ -38,7 +38,16 @@ body {
 	text-shadow: none !important;
 }
 
-body :not(INPUT):not(TEXTAREA) {
+body p,
+body h1,
+body h2,
+body h3,
+body h4,
+body h5,
+body h6,
+body blockquote,
+body a,
+body button {
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -115,6 +124,29 @@ blockquote footer:before {
 	display: inline-block;
 	line-height: 1em;
 	margin: 0px 7px;
+	
+}
+
+code, pre {
+	padding: 0px 7px;
+	margin: 14px 0px;
+	display: block;
+	background-color: #f1f1f1;
+	line-height: 25px;
+	overflow: auto;
+}
+
+pre {
+	background: linear-gradient(
+	  to bottom,
+	  #f1f1f1 50%,
+	  #fcfcfc 50%
+	);
+	background-size: 100% 50px;
+}
+
+code {
+	display: inline;
 }
 
 /*
@@ -147,7 +179,7 @@ blockquote footer:before {
 }
 
 .ui-panel.ui-panel-display-overlay.ui-panel-open {
-	z-index: 10000;
+	z-index: 2000;
 }
 
 .ui-page-theme-a a, html .ui-bar-a a, html .ui-body-a a, html body .ui-group-theme-a a {
@@ -240,8 +272,8 @@ blockquote footer:before {
 
 .ui-panel.ui-panel-position-bottom {
 	position: fixed;
-	top: 100%;
-	bottom: auto;
+	top: auto;
+	bottom: -100%;
 	left: 0px;
 	width: 100%;
 	max-width: 100%;
@@ -249,11 +281,48 @@ blockquote footer:before {
 	max-height: 80%;
 	overflow-y: auto;
 	overflow-x: hidden;
-	min-height: 75px:
-	padding: 28px 14px;
+	min-height: 75px;
+	
+	visibility: visible;
+	clip: initial;
+	
 }
 
-.nd2-bottom-sheet-link {
+.ui-bottom-sheet-list .row > * {
+	width: 100%;
+}
+
+.ui-bottom-sheet-list .ui-bottom-sheet-link {
+	display: block;
+	text-align: left;
+	margin: 0px;
+}
+
+.ui-bottom-sheet-list .ui-bottom-sheet-link .zmdi {
+	font-size: 1em;
+	display: inline-block;
+	margin-right: 7px;
+	min-width: 20px;
+	text-align: center;
+}
+
+.ui-bottom-sheet-list .ui-bottom-sheet-link strong {
+	display: inline-block;
+	font-weight: 600;
+}
+
+
+.ui-panel-position-bottom {
+	
+	-webkit-transition: bottom 0.4s, top 0.4s;
+	-moz-transition: bottom 0.4s, top 0.4s;
+	-ms-transition: bottom 0.4s, top 0.4s;
+	-o-transition: bottom 0.4s, top 0.4s;
+	transition: all 0.4s;
+	
+}
+
+.ui-bottom-sheet-link {
 	display: inline-block;
 	padding: 14px;
 	text-align: center;
@@ -261,13 +330,13 @@ blockquote footer:before {
 	text-shadow: none !important;
 }
 
-.nd2-bottom-sheet-link .md {
+.ui-bottom-sheet-link .zmdi {
 	display: block;
 	line-height: 1.4em;
 	color: rgba(0, 0, 0, 0.87);
 }
 
-.nd2-bottom-sheet-link strong {
+.ui-bottom-sheet-link strong {
 	display: block;
 	font-size: 14px;
 	font-weight: 400;
@@ -588,10 +657,10 @@ a.ui-btn.ui-btn-icon-right > i.md { margin-right: -1em; }
 .ui-btn > i.md,
 button.ui-btn > i.md { float: none; margin: 0px 7px; }
 
-.ui-btn.nd2-btn-icon-block > i.md { display: block; }
+.ui-btn.ui-btn-icon-block > i.zmdi { display: block; }
 
 .ui-btn.ui-btn-fab { border-radius: 50%; }
-.ui-btn.ui-btn-fab > i.md { margin: 0px; padding: 0px; }
+.ui-btn.ui-btn-fab > i.zmdi { margin: 0px; padding: 0px; }
 
 /*
  * Forms
@@ -644,7 +713,6 @@ button.ui-btn > i.md { float: none; margin: 0px 7px; }
   -ms-transform: rotate(218deg) scale(1,-1);
   -o-transform: rotate(218deg) scale(1,-1);
   transform: rotate(218deg) scale(1,-1);
-  border-color: #009688;
   border-top-style: none;
   border-right-style: none;
   background-image: none !important;
@@ -715,6 +783,15 @@ textarea.ui-input-text.ui-textinput-autogrow {
 	-o-transition: width 0.4s, height 0.4s, background 0.4s;
 	transition: width 0.4s, height 0.4s, background 0.4s;
 	
+}
+
+.ui-input-search {
+	padding-left: 7px;
+}
+
+.ui-input-search:after {
+	top: auto;
+	bottom: 0px;
 }
 
 .ui-body-a, .ui-page-theme-a .ui-body-inherit, html .ui-bar-a .ui-body-inherit, html .ui-body-a .ui-body-inherit, html body .ui-group-theme-a .ui-body-inherit, html .ui-panel-page-container-a {
