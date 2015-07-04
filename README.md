@@ -6,6 +6,36 @@ jQueryMobile Template inspired by Material Design
 
 nativeDroid2 is currently in a pretty early stage of development and very incomplete in its architecture and features. So please do not use it in any productive project or expect a complete template.
 
+
+# Demo & Documentation
+
+Basic Elements
+--------------
+
+[Typography and Text Elements](http://nd2.godesign.ch/examples/elements/text.html)
+[Grid System](http://nd2.godesign.ch/examples/elements/grid.html)
+[Buttons & FABS](http://nd2.godesign.ch/examples/elements/buttons.html)
+[Header & Footer](http://nd2.godesign.ch/examples/elements/header_footer.html)
+[Listviews](http://nd2.godesign.ch/examples/elements/listviews.html)
+[Form](http://nd2.godesign.ch/examples/elements/forms.html)
+[Table](http://nd2.godesign.ch/examples/elements/tables.html)
+[Dialog & Popups](http://nd2.godesign.ch/examples/elements/dialog_popups.html)
+[Panels](http://nd2.godesign.ch/examples/elements/panels.html)
+[Autocomplete](http://nd2.godesign.ch/examples/elements/autocomplete.html)
+[Collapsible & Accordions](http://nd2.godesign.ch/examples/elements/collapsible_accordions.html)
+
+Extended Elements
+-
+[Tabs](http://nd2.godesign.ch/examples/extended/tabs.html)
+[Cards](http://nd2.godesign.ch/examples/extended/cards.html)
+[Icons](http://nd2.godesign.ch/examples/extended/icons.html)
+[Bottom Sheets](http://nd2.godesign.ch/examples/extended/bottomsheet.html)
+
+Nice to Know
+-
+[Colors & Styles](http://nd2.godesign.ch/info/colors_and_styles.html)
+[Credits & License](http://nd2.godesign.ch/info/credits.html)
+
 # License
 *nativeDroid2 is distributed under the MIT-License*
 
