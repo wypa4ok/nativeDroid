@@ -501,7 +501,7 @@ li.ui-tabs-active:after {
 	border: 0px;
 	text-shadow: none !important;
 	border-radius: 4px;
-	padding: 8px 8px;
+	/*padding: 8px 8px;*/
 	
 	-webkit-transition: background 0.4s;
 	-moz-transition: background 0.4s;
@@ -512,7 +512,7 @@ li.ui-tabs-active:after {
 }
 
 .ui-page-theme-a .ui-btn.ui-btn-fab {
-	padding: 11.2px 16px;
+	/*padding: 11.2px 16px;*/
 }
 
 .ui-page-theme-a .ui-btn:focus, html .ui-bar-a .ui-btn:focus, html .ui-body-a .ui-btn:focus, html body .ui-group-theme-a .ui-btn:focus, html head+body .ui-btn.ui-btn-a:focus, .ui-page-theme-a .ui-focus, html .ui-bar-a .ui-focus, html .ui-body-a .ui-focus, html body .ui-group-theme-a .ui-focus, html head+body .ui-btn-a.ui-focus, html head+body .ui-body-a.ui-focus,
