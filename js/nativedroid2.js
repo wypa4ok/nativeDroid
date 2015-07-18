@@ -97,40 +97,151 @@ var nd2Project = {
 	});
 
 
-	// nd2-ad
-	$.widget("nd2.ad",{
-		options: {
-			banner : null,
-			path : nd2Project.advertising.path,
-			activated : nd2Project.advertising.active,
-			extension : nd2Project.advertising.extension,
-			post : {}
-		},
-		_create: function() {
-			var el = this.element;
-			var opts = $.extend(this.options, el.data("options"));
-			$(document).trigger("createinclude");
+		// nd2-ad
+		$.widget("nd2.ad",{
+			options: {
+				banner : null,
+				path : nd2Project.advertising.path,
+				activated : nd2Project.advertising.active,
+				extension : nd2Project.advertising.extension,
+				post : {}
+			},
+			_create: function() {
+				var el = this.element;
+				var opts = $.extend(this.options, el.data("options"));
+				$(document).trigger("createinclude");
 
-			if(opts.activated && opts.banner !== null) {
-				var src = opts.path+opts.banner+opts.extension;
-				el.addClass("nd2-banner");
-				el.load(src,opts.post,function() {
-					el.enhanceWithin();
-				});
+				if(opts.activated && opts.banner !== null) {
+					var src = opts.path+opts.banner+opts.extension;
+					el.addClass("nd2-banner");
+					el.load(src,opts.post,function() {
+						el.enhanceWithin();
+					});
+				}
+			},
+			_update: function() {
+	//			console.log("update?");
+			},
+			refresh: function() {
+				return this._update();
 			}
-		},
-		_update: function() {
-//			console.log("update?");
-		},
-		refresh: function() {
-			return this._update();
-		}
-	});
+		});
 
-	$(document).bind("pagecreate", function(e) {
-		$(document).trigger("includebeforecreate");
-		return $("nd2-ad", e.target).ad();
-	});
+		$(document).bind("pagecreate", function(e) {
+			$(document).trigger("includebeforecreate");
+			return $("nd2-ad", e.target).ad();
+		});
+
+
+
+		// nd2-tabs
+		$.widget("nd2.tabs",{
+			options: {},
+			settings: {
+				activeTab : false,
+				activeIdx : 0
+			},
+			_create: function() {
+				var _self = this;
+				var el = this.element;
+				el.addClass("nd2Tabs");
+
+				el.find("li[data-tab]").each(function(idx) {
+					$(this).addClass("nd2Tabs-nav-item");
+					if($(this).data("tab-active") && !_self.settings.activeTab) {
+						$(this).addClass("nd2Tabs-active");
+						_self.settings.activeTab = $(this).data("tab");
+						_self.settings.activeIdx = idx;
+					}
+				});
+
+				// Select First if activeTab is not set
+				if(!_self.settings.activeTab) {
+					var firstEl = el.find("li[data-tab]").first();
+					if(firstEl.length > 0) {
+						firstEl.addClass("nd2Tabs-active");
+						_self.settings.activeTab = firstEl.data("tab");
+					} else {
+						_self.destroyTabs();
+					}
+				}
+
+				// Waves.js
+				if(typeof Waves !== "undefined") {
+						Waves.attach('.nd2Tabs-nav-item', ['waves-button','waves-light']);
+						Waves.init();
+				}
+
+				// Bind Events
+				el.on("click",".nd2Tabs-nav-item:not('.nd2Tabs-active')",function(e) {
+					e.preventDefault();
+					_self.switchTab($(this),$(this).data('tab'),$(".nd2Tabs-nav-item").index($(this)[0]));
+				});
+
+				if(_self.settings.activeTab) {
+					_self.prepareTabs();
+				}
+
+			},
+			_update: function() {
+			},
+			refresh: function() {
+				return this._update();
+			},
+			destroyTabs : function() {
+				this.element.remove();
+			},
+			switchTab: function(obj, tabKey,toIdx) {
+				var _self = this;
+
+				var direction = (parseInt(toIdx,10) > _self.settings.activeIdx) ? "right" : "left";
+				var directionTo = (parseInt(toIdx,10) < _self.settings.activeIdx) ? "right" : "left";
+
+				obj.parent().find(".nd2Tabs-active").removeClass("nd2Tabs-active");
+
+				obj.addClass('nd2Tabs-active');
+
+				_self.settings.activeIdx = parseInt(toIdx,10);
+				_self.settings.activeTab = tabKey;
+
+				// Activate Content Tab
+				var oldContent = $("body").find(".nd2Tabs-content-tab.nd2Tab-active");
+
+				oldContent.addClass("to-"+directionTo);
+				window.setTimeout(function() {
+					oldContent.removeClass("nd2Tab-active to-"+directionTo);
+				},400);
+
+				var newContent = $("body").find(".nd2Tabs-content-tab[data-tab='"+_self.settings.activeTab+"']");
+
+				newContent.addClass("nd2Tab-active from-"+direction);
+
+				window.setTimeout(function() {
+					newContent.removeClass("from-"+direction);
+				},150);
+
+			},
+			prepareTabs: function() {
+				var _self = this;
+				var tabs = $("body").find("[data-role='nd2tab']");
+				if(tabs.length > 0) {
+					tabs.addClass("nd2Tabs-content-tab");
+					tabs.each(function(idx) {
+						if($(this).data('tab') == _self.settings.activeTab) {
+							$(this).addClass('nd2Tab-active');
+						}
+					});
+				} else {
+					_self.destroyTabs();
+				}
+			}
+		});
+
+		$(document).bind("pagecreate", function(e) {
+			$(document).trigger("includebeforecreate");
+			return $("[data-role='nd2tabs']", e.target).tabs();
+		});
+
 
 // nd2Toast
 	(function ($) {
