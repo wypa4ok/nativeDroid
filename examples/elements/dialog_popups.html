@@ -10,6 +10,11 @@
 		<link rel="stylesheet" href="/vendor/wow/animate.css" />
 		<link rel="stylesheet" href="/css/nativedroid2.css" />
 
+				<style>
+					/* Prevent FOUC */
+					body { opacity: 0; }
+				</style>
+
 	</head>
 	<body>
 
@@ -23,9 +28,6 @@
 			</div>
 
 			<div role="main" class="ui-content wow fadeIn" data-wow-delay="0.2s" data-inset="false">
-
-        	<h2>Dialog (external link)</h2>
-            <a href="/examples/fragments/dialog.html" data-rel="dialog" data-role="button" data-inline="true" ><i class='lIcon fa fa-bullseye'></i> Open dialog</a>
 
 	     	<h2>Popup Dialog</h2>
             <a href="#popupDialog" data-rel="popup" data-position-to="window" data-role="button" data-inline="true" data-transition="pop"><i class='lIcon fa fa-external-link'></i> Open popup dialog</a>
