@@ -140,11 +140,15 @@
 			options: {},
 			settings: {
 				activeTab : false,
-				activeIdx : 0
+				activeIdx : 0,
+				swipe : true
 			},
 			_create: function() {
 				var _self = this;
 				var el = this.element;
+				_self.settings = $.extend(_self.settings, {
+					swipe : el.data('swipe')
+				});
 				el.addClass("nd2Tabs");
 
 				el.find("li[data-tab]").each(function(idx) {
@@ -165,7 +169,16 @@
 					} else {
 						_self.destroyTabs();
 					}
-				}
+				};
+
+				// Bind Swipe Event
+				if(_self.settings.swipe) {
+					$("div[role=main]").on("swipeleft", function (event) {
+							_self.changeNavTab(true);
+					}).on("swiperight", function (event) {
+							_self.changeNavTab(false);
+					});
+				};
 
 				// Waves.js
 				if(typeof Waves !== "undefined") {
@@ -191,6 +204,27 @@
 			},
 			destroyTabs : function() {
 				this.element.remove();
+			},
+			changeNavTab : function(left) {
+			    var $tabs = $('ul[data-role="nd2tabs"] li');
+
+			    var len = $tabs.length;
+			    var curidx = 0;
+
+			    $tabs.each(function(idx){
+			    	if ($(this).hasClass("nd2Tabs-active")){
+			        	curidx = idx;
+			        }
+			    });
+
+			    var nextidx = 0;
+			    if (left) {
+			        nextidx = (curidx >= len - 1) ? 0 : curidx + 1;
+			    } else {
+			        nextidx = (curidx <= 0) ? len - 1 : curidx - 1;
+			    }
+			    $tabs.eq(nextidx).click();
+
 			},
 			switchTab: function(obj, tabKey,toIdx) {
 				var _self = this;
@@ -445,9 +479,6 @@
 			            _self.options = $.extend(_self.defaults, options);
 
 									_self.build = function() {
-
-											console.log("nd2 Project settings: ");
-											console.log(_self.options);
 
 											_self.globalSettings();
 											_self.bindNavigationSwipe();
