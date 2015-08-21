@@ -4,9 +4,6 @@
 
 jQueryMobile Template inspired by Material Design
 
-nativeDroid2 is currently in a pretty early stage of development and very incomplete in its architecture and features. So please do not use it in any productive project or expect a complete template.
-
-
 # Demo & Documentation
 
 Basic Elements
