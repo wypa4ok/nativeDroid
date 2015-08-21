@@ -46,13 +46,19 @@ li.ui-tabs-active > .ui-link.ui-btn.ui-tabs-anchor,
 	color: rgba(255,255,255,0.85);
 }
 
-.ui-icon-check:after, html .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+.ui-page-theme-a .ui-radio .ui-btn.ui-radio-on:before {
+	background-color: #9E9E9E;
+}
+
+.ui-page-theme-a .ui-btn.ui-radio-on:after {
 	border-color: #9E9E9E;
 }
 
-.ui-btn.ui-radio-on:after {
-	border: 2px solid #9E9E9E;
+html .ui-page-theme-a .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+	background-color: #9E9E9E;
+	border-color: #9E9E9E;
 }
+
 
 .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-checkbox-on,
 .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-radio-on {

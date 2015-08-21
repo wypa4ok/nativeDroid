@@ -46,12 +46,17 @@ li.ui-tabs-active > .ui-link.ui-btn.ui-tabs-anchor,
 	color: rgba(255,255,255,0.85);
 }
 
-.ui-icon-check:after, html .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+.ui-page-theme-a .ui-radio .ui-btn.ui-radio-on:before {
+	background-color: #FF5722;
+}
+
+.ui-page-theme-a .ui-btn.ui-radio-on:after {
 	border-color: #FF5722;
 }
 
-.ui-btn.ui-radio-on:after {
-	border: 2px solid #FF5722;
+html .ui-page-theme-a .ui-btn.ui-checkbox-on.ui-checkbox-on:after {
+	background-color: #FF5722;
+	border-color: #FF5722;
 }
 
 .ui-controlgroup-horizontal .ui-controlgroup-controls .ui-btn.ui-checkbox-on,
