@@ -24,7 +24,7 @@ Extended Elements
 -
 - [Tabs](http://nd2.godesign.ch/examples/extended/tabs.html)
 - [Cards](http://nd2.godesign.ch/examples/extended/cards.html)
-- [Sarch](http://nd2.godesign.ch/examples/extended/search.html)
+- [Search](http://nd2.godesign.ch/examples/extended/search.html)
 - [Snackbars & Toasts](http://nd2.godesign.ch/examples/extended/toasts.html)
 - [Charts](http://nd2.godesign.ch/examples/extended/charts.html)
 - [Icons](http://nd2.godesign.ch/examples/extended/icons.html)
