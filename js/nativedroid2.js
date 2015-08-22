@@ -662,6 +662,9 @@
 											$("body").addClass("nd2-ready");
 											$(document).on("pagechange",function(){
 												$("body").removeClass("nd2-ready");
+											})
+											.bind("pagecontainershow", function(e) {
+											   $('body').css('opacity','1');
 											});
 									};
 
