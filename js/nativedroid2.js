@@ -699,12 +699,15 @@
             };
 
             _self.iniSmoothTransition = function() {
-                $("body").addClass("nd2-ready");
-                $(document).on("pagechange", function() {
+                    $("body").addClass("nd2-ready");
+                    $(document).on("pagechange",function(){
                         $("body").removeClass("nd2-ready");
                     })
-                    .bind("pagecontainershow", function(e) {
-                        $('body').css('opacity', '1');
+                    .bind("pagecontainershow ", function(e) {
+                       $('body').css('opacity','1');
+                    });
+                    $(window).on('navigate',function(event,state) {
+                        $('body').css('opacity','1');
                     });
             };
 
