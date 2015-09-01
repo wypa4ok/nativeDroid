@@ -4,7 +4,17 @@
 
 jQueryMobile Template inspired by Material Design
 
-# Demo & Documentation
+# Install
+
+  **git**
+
+```git clone https://github.com/godesign/nativeDroid2.git```
+
+  **bower**
+
+```bower install nativeDroid2```
+
+# Demo & [Documentation](http://nativedroid.scripter.click)
 
 Basic Elements
 -
@@ -29,6 +39,11 @@ Extended Elements
 - [Charts](http://nd2.godesign.ch/examples/extended/charts.html)
 - [Icons](http://nd2.godesign.ch/examples/extended/icons.html)
 - [Bottom Sheets](http://nd2.godesign.ch/examples/extended/bottomsheet.html)
+
+Widgets
+-
+- [nd2-ad](http://nativedroid.scripter.click/nd2-ad/)
+- [nd2-include](http://nativedroid.scripter.click/nd2-include/)
 
 Nice to Know
 -
