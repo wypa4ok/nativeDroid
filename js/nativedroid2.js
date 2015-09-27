@@ -80,7 +80,7 @@
             $(document).trigger("createinclude");
 
             if (opts.src !== null) {
-                el.load(opts.src, opts.post, function() {
+                el.load(opts.src, function() {
                     el.enhanceWithin();
 
                     // Apply waves.js
@@ -145,7 +145,7 @@
                 if (opts.active && opts.banner !== null) {
                     var src = (opts.path || "") + opts.banner + (opts.extension || "");
                     el.addClass("nd2-banner");
-                    el.load(src, opts.post, function() {
+                    el.load(src, function() {
                         el.enhanceWithin();
                     });
                 }
