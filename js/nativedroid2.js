@@ -221,7 +221,7 @@
             // Bind Events
             el.on("click", ".nd2Tabs-nav-item:not('.nd2Tabs-active')", function(e) {
                 e.preventDefault();
-                _self.switchTab($(this), $(this).data('tab'), $(".nd2Tabs-nav-item").index($(this)[0]));
+                _self.switchTab($(this), $(this).data('tab'), $(this).closest('.nd2Tabs').find(".nd2Tabs-nav-item").index($(this)[0]));
             });
 
             if (_self.settings.activeTab) {
@@ -271,14 +271,14 @@
             _self.settings.activeTab = tabKey;
 
             // Activate Content Tab
-            var oldContent = $("body").find(".nd2Tabs-content-tab.nd2Tab-active");
+            var oldContent = obj.closest('.ui-page').find(".nd2Tabs-content-tab.nd2Tab-active");
 
             oldContent.addClass("to-" + directionTo);
             window.setTimeout(function() {
                 oldContent.removeClass("nd2Tab-active to-" + directionTo);
             }, 400);
 
-            var newContent = $("body").find(".nd2Tabs-content-tab[data-tab='" + _self.settings.activeTab + "']");
+            var newContent = obj.closest('.ui-page').find(".nd2Tabs-content-tab[data-tab='" + _self.settings.activeTab + "']");
 
             newContent.addClass("nd2Tab-active from-" + direction);
 
