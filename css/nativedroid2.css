@@ -441,11 +441,13 @@ code {
 
 .nd2Tabs {
 	display: block;
-	margin: 0px 0px -5px 60px;
+	margin: 0px 0px 0px 60px;
 	padding: 0px;
 	list-style-type: none;
 	white-space: nowrap;
 	overflow-x: auto;
+	height: 48px;
+	overflow-y: hidden;
 }
 
 .nd2Tabs li {
