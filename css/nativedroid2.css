@@ -8,7 +8,7 @@
 /*@import url("nativedroid2.color.indigo.css");*/
 /*@import url("nativedroid2.color.light-blue.css");*/
 /*@import url("nativedroid2.color.cyan.css");*/
-/*@import url("nativedroid2.color.teal.css");*/
+@import url("nativedroid2.color.teal.css");
 /*@import url("nativedroid2.color.green.css");*/
 /*@import url("nativedroid2.color.light-green.css");*/
 /*@import url("nativedroid2.color.lime.css");*/
@@ -18,7 +18,7 @@
 /*@import url("nativedroid2.color.deep-orange.css");*/
 /*@import url("nativedroid2.color.brown.css");*/
 /*@import url("nativedroid2.color.grey.css");*/
-@import url("nativedroid2.color.blue-grey.css");
+/*@import url("nativedroid2.color.blue-grey.css");*/
 
 
 @import url("flexboxgrid.min.css");
@@ -1063,7 +1063,7 @@ html >body .ui-rangeslider .ui-rangeslider-sliders .ui-slider-track:first-child 
 	color: #ffffff;
 	font-size: 14px;
 
-	z-index: 999;
+	z-index: 2001;
 
 }
 
