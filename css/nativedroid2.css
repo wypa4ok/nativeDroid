@@ -776,7 +776,7 @@ button.ui-btn > i.md { float: none; margin: 0px 7px; }
 
 .ui-btn.ui-btn-icon-block > i.zmdi { display: block; }
 
-.ui-btn.ui-btn-fab { border-radius: 50%; }
+.ui-btn.ui-btn-fab { border-radius: 50% !important; }
 .ui-btn.ui-btn-fab > i.zmdi { margin: 0px; padding: 0px; }
 
 .ui-btn {
