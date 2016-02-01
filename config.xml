@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.salesucation.simplechat" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>Simple Chat</name>
+    <description>
+        A sample Angular application that uses firebase as its backend.
+    </description>
+    <author email="rhildred@conestogac.on.ca" href="http://rhildred.github.io">
+        Apache Cordova Team
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <plugin name="org.apache.cordova.inappbrowser" />
+</widget>
